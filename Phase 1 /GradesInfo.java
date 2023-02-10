@@ -6,7 +6,7 @@ public class GradesInfo {
     static boolean quit = false; 
     // String user_response = " ";
     static int[] grades = {70,80,90,100};
-    static String menu = ("0 = Quit" + "\n" + "1 = Print Grades" + "\n" + "2 = Get Max Score" + "\n" + "3 = Get Min Score" );
+    static String menu = ("0 = Quit" + "\n" + "1 = Print Grades" + "\n" + "2 = Get Max Score" + "\n" + "3 = Get Min Score" + "\n" + "4 = Did anyone get a perfect score?" +"\n" + "5 = Did anyone get a 0 ?"  );
     static String message = ( "\n" + "Choose another option or enter quit:");
 
 
@@ -22,6 +22,26 @@ public class GradesInfo {
         System.out.println(message);
         System.out.println(menu);
         System.out.print("Your option: ");
+    }
+
+    static boolean perfectScoreQ(int[] array){
+        boolean perf_score = false;
+        for (int i=0; i < array.length; i++){
+            if(array[i] == 100){
+                perf_score = true;
+            }
+        }
+        return perf_score;
+    }   
+
+    static boolean bottomScoreQ(int[] array){
+        boolean bottom_score = false;
+        for (int i=0; i < array.length; i++){
+            if(array[i] == 0){
+                bottom_score = true;
+            }
+        }
+        return bottom_score;
     }
 
     static int getMaxScore(int[] array){
@@ -45,8 +65,6 @@ public class GradesInfo {
         return min;
     }
     
-
-
     
 
     // while quit is false, execute these three steps:
@@ -80,8 +98,15 @@ public class GradesInfo {
                     option = user_input.nextInt();
                     break;
                 case 4:
-                
-
+                    System.out.println(perfectScoreQ(grades));
+                    message();
+                    option = user_input.nextInt();
+                    break;
+                case 5:
+                    System.out.println(bottomScoreQ(grades));
+                    message();
+                    option = user_input.nextInt();
+                    break;
 
             }
         }
