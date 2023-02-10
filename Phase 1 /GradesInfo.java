@@ -6,7 +6,8 @@ public class GradesInfo {
     static boolean quit = false; 
     // String user_response = " ";
     static int[] grades = {70,80,90,100};
-    static String menu = ("0 = Quit" + "\n" + "1 = Print Grades" );
+    static String menu = ("0 = Quit" + "\n" + "1 = Print Grades" + "\n" + "2 = Get Max Score" + "\n" + "3 = Get Min Score" );
+    static String message = ( "\n" + "Choose another option or enter quit:");
 
 
     static String arrayToString(int[]array){
@@ -16,6 +17,36 @@ public class GradesInfo {
         }
         return arrString;
     }
+
+    static void message(){
+        System.out.println(message);
+        System.out.println(menu);
+        System.out.print("Your option: ");
+    }
+
+    static int getMaxScore(int[] array){
+        int max = array[0];
+        for (int i=0; i < array.length; i++){
+            if(array[i] > max){
+                max = array[i];
+            }
+        }
+        return max;
+    }
+
+    static int getMinScore(int[] array){
+       
+        int min = array[0];
+        for (int i=0; i < array.length; i++){
+            if(array[i] < min){
+                min = array[i];
+            }
+        }
+        return min;
+    }
+    
+
+
     
 
     // while quit is false, execute these three steps:
@@ -34,11 +65,23 @@ public class GradesInfo {
 
                 case 1:
                     System.out.println(arrayToString(grades));
-                    System.out.println(menu);
+                    message();
                     option = user_input.nextInt();
                     break;
                 case 2:
-                    
+        
+                    System.out.println(getMaxScore(grades));
+                    message();
+                    option = user_input.nextInt();
+                    break;
+                case 3:
+                    System.out.println(getMinScore(grades));
+                    message();
+                    option = user_input.nextInt();
+                    break;
+                case 4:
+                
+
 
             }
         }
