@@ -69,10 +69,18 @@ public class GradesInfo {
     }
 
     static int[] sortedScores(int[] array, int k){
-        int[]count;
-        int[]sorted;
+        int[]count = {};
+        k = array.length;
+        int[] sorted = new int[k];
+
         for (int i=0; i < array.length; i++){
-            
+            array[i]= count[i];
+            if (array[i]==array[i]){
+                count[i] += 1 ;
+            }
+            for (int j=0; j < count.length; j++){
+                
+            }
         }
 
 
