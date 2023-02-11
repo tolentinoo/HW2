@@ -24,6 +24,8 @@ public class GradesInfo {
         System.out.print("Your option: ");
     }
 
+
+
     static boolean perfectScoreQ(int[] array){
         boolean perf_score = false;
         for (int i=0; i < array.length; i++){
@@ -54,6 +56,7 @@ public class GradesInfo {
         return max;
     }
 
+
     static int getMinScore(int[] array){
        
         int min = array[0];
@@ -63,6 +66,16 @@ public class GradesInfo {
             }
         }
         return min;
+    }
+
+    static int[] sortedScores(int[] array, int k){
+        int[]count;
+        int[]sorted;
+        for (int i=0; i < array.length; i++){
+            
+        }
+
+
     }
     
     
