@@ -5,8 +5,8 @@ public class GradesInfo {
     static Scanner user_input = new Scanner(System.in); //ask about it being static used to be Scanner
     static boolean quit = false; 
     // String user_response = " ";
-    static int[] grades = {70,80,90,100};
-    static String menu = ("0 = Quit" + "\n" + "1 = Print Grades" + "\n" + "2 = Get Max Score" + "\n" + "3 = Get Min Score" + "\n" + "4 = Did anyone get a perfect score?" +"\n" + "5 = Did anyone get a 0 ?" +"\n" + "6 = Sorted Scores?"  );
+    static int[] grades = {60,60,60,80,90,100,100};
+    static String menu = ("0 = Quit" + "\n" + "1 = Print Grades" + "\n" + "2 = Did anyone get a perfect score? " + "\n" + "3 = Did anyone get a 0?" + "\n" + "4 = Max score" +"\n" + "5 = How many people got the max score ?" + "\n" + "6 = Minimum score ?" + "\n" + "7 = How many people got the minimum score ?"  );
     static String message = ( "\n" + "Choose another option or enter quit:");
 
 
@@ -56,6 +56,16 @@ public class GradesInfo {
         return max;
     }
 
+    static int nrMaxScores(int[] array){
+        int max = getMaxScore(array);
+        int num_max = 0 ;
+        for (int i =0; i < array.length; i++){
+            if (array[i] == max){
+                num_max += 1;
+            }
+        }
+        return num_max;
+    }
 
     static int getMinScore(int[] array){
        
@@ -68,28 +78,39 @@ public class GradesInfo {
         return min;
     }
 
-    static int[] sortedScores(int[] array, int k){
-        int[]count = {};
-        k = array.length;
-        int[] sorted = new int[k];
-
-        for (int i=0; i < array.length; i++){
-            array[i]= count[i];
-            if (array[i]==array[i]){
-                count[i] += 1 ;
+    static int nrMinScores(int[] array){
+        int min = getMinScore(array);
+        int num_min= 0 ;
+        for (int i =0; i < array.length; i++){
+            if (array[i] == min){
+                num_min += 1;
             }
-        for (int j=0; j < count.length; j++){
-            if (count[j] >= 1){
-                    sorted[i] = count[j];
+        }
+        return num_min;
+    }
+
+    // static int[] sortedScores(int[] array, int k){
+    //     int[]count = {};
+    //     k = array.length;
+    //     int[] sorted = new int[k];
+
+    //     for (int i=0; i < array.length; i++){
+    //         array[i]= count[i];
+    //         if (array[i]==array[i]){
+    //             count[i] += 1 ;
+    //         }
+    //     for (int j=0; j < count.length; j++){
+    //         if (count[j] >= 1){
+    //                 sorted[i] = count[j];
                     
 
 
-                }
-            }
-        }
-        return sorted;
+    //             }
+    //         }
+    //     }
+    //     return sorted;
 
-    }
+    // }
     
     
 
@@ -114,30 +135,39 @@ public class GradesInfo {
                     break;
                 case 2:
         
-                    System.out.println(getMaxScore(grades));
-                    message();
-                    option = user_input.nextInt();
-                    break;
-                case 3:
-                    System.out.println(getMinScore(grades));
-                    message();
-                    option = user_input.nextInt();
-                    break;
-                case 4:
                     System.out.println(perfectScoreQ(grades));
                     message();
                     option = user_input.nextInt();
                     break;
-                case 5:
+                case 3:
                     System.out.println(bottomScoreQ(grades));
                     message();
                     option = user_input.nextInt();
                     break;
-                case 6:
-                    System.out.println(arrayToString(sortedScores(grades,4)));
+                case 4:
+                    System.out.println(getMaxScore(grades));
                     message();
                     option = user_input.nextInt();
                     break;
+                case 5:
+                    System.out.println(nrMaxScores(grades));
+                    message();
+                    option = user_input.nextInt();
+                    break;
+                
+                case 6:
+                    System.out.println(getMinScore(grades));
+                    message();
+                    option = user_input.nextInt();
+                    break;
+                case 7:
+                    System.out.println(nrMinScores(grades));
+                    message();
+                    option = user_input.nextInt();
+                    break;
+
+
+
             }
         }
 
