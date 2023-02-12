@@ -6,7 +6,7 @@ public class GradesInfo {
     static boolean quit = false; 
     // String user_response = " ";
     static int[] grades = {70,80,90,100};
-    static String menu = ("0 = Quit" + "\n" + "1 = Print Grades" + "\n" + "2 = Get Max Score" + "\n" + "3 = Get Min Score" + "\n" + "4 = Did anyone get a perfect score?" +"\n" + "5 = Did anyone get a 0 ?"  );
+    static String menu = ("0 = Quit" + "\n" + "1 = Print Grades" + "\n" + "2 = Get Max Score" + "\n" + "3 = Get Min Score" + "\n" + "4 = Did anyone get a perfect score?" +"\n" + "5 = Did anyone get a 0 ?" +"\n" + "6 = Sorted Scores?"  );
     static String message = ( "\n" + "Choose another option or enter quit:");
 
 
@@ -78,16 +78,16 @@ public class GradesInfo {
             if (array[i]==array[i]){
                 count[i] += 1 ;
             }
-            for (int j=0; j < count.length; j++){
-                if (count[i] >= 1){
-                    int temp;
-                    temp = count[i];
-                    = sorted[i];
+        for (int j=0; j < count.length; j++){
+            if (count[j] >= 1){
+                    sorted[i] = count[j];
+                    
+
 
                 }
             }
         }
-
+        return sorted;
 
     }
     
@@ -133,7 +133,11 @@ public class GradesInfo {
                     message();
                     option = user_input.nextInt();
                     break;
-
+                case 6:
+                    System.out.println(arrayToString(sortedScores(grades,4)));
+                    message();
+                    option = user_input.nextInt();
+                    break;
             }
         }
 
