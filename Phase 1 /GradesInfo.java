@@ -174,10 +174,6 @@ public class GradesInfo {
 
     }
 
-
-    // private static void findMax(int[] grades2) {
-    // }
-
     public static void main(String[] args) {
         gradesLoop();
     }
