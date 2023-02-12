@@ -79,7 +79,12 @@ public class GradesInfo {
                 count[i] += 1 ;
             }
             for (int j=0; j < count.length; j++){
-                
+                if (count[i] >= 1){
+                    int temp;
+                    temp = count[i];
+                    = sorted[i];
+
+                }
             }
         }
 
