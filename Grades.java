@@ -1,6 +1,7 @@
 
 
 public class Grades {
+    
     static int getScore(int[]array, int studentID){
         int score= 0;
         score = array[studentID];

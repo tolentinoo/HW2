@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
 public class GradesInfo {
+    // declare a Boolean variable quit, initialize it as false
     static Scanner user_input = new Scanner(System.in); //ask about it being static used to be Scanner
     static boolean quit = false; 
+    // String user_response = " ";
     static int[] grades = {60,80,60,20,90,100,100};
     static String menu = ("0 = Quit" + "\n" + "1 = Print Grades" + "\n" + "2 = Did anyone get a perfect score? " + "\n" + "3 = Did anyone get a 0?" + "\n" + "4 = Max score" +"\n" + "5 = How many people got the max score ?" + "\n" + "6 = Minimum score ?" + "\n" + "7 = How many people got the minimum score ?" + "\n" + "8 = Get my Score" + "\n" + "9 = Sorted scores"+ "\n" + "10 = Get my rank"  );
     static String message = ( "\n" + "Choose another option or enter quit:");
@@ -29,7 +31,7 @@ public class GradesInfo {
         System.out.println(menu);
         System.out.print("Your option: ");
         Integer option = user_input.nextInt();
-        while ((quit == false) && (option >= 0) && (option <= 10)){
+        while ((quit == false) && (option >= 0) ){
             switch (option){
                 case 0: 
                     System.out.println("You have now quit the program!");
