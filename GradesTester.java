@@ -3,7 +3,7 @@
 public class GradesTester {
     static int arr_size = 7;
     static int max_val=100;
-    static int[] test_grades = {60,80,60,20,90,100,100};
+    static int[] test_grades = {60,80,60,20,90,100,0};
 
 
     public static String arrToString(int[]array){
